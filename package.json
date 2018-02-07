@@ -1,0 +1,7 @@
+{
+  "name": "node-ghkw",
+  "version": "1.0.0",
+  "description": "Count keyword frequency in code by GitHub API",
+  "main": "index.js",
+  "license": "MIT"
+}
