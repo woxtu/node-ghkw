@@ -1,7 +1,11 @@
 {
-  "name": "node-ghkw",
+  "name": "ghkw",
   "version": "1.0.0",
   "description": "Count keyword frequency in code by GitHub API",
-  "main": "index.js",
-  "license": "MIT"
+  "main": "lib/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "p-map": "^1.2.0"
+  }
 }
