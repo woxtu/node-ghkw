@@ -1,7 +1,7 @@
 {
   "name": "ghkw",
   "version": "1.0.0",
-  "description": "Count keyword frequency in code by GitHub API",
+  "description": "Counting keyword frequencies in GitHub",
   "main": "lib/index.js",
   "bin": {
     "ghkw": "bin/ghkw.js"
@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "commander": "^2.14.1",
-    "p-map": "^1.2.0"
+    "p-map": "^1.2.0",
+    "tablemark": "^1.2.0"
   }
 }
