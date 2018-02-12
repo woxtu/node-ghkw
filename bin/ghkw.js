@@ -22,6 +22,10 @@ require('../utils/object-extension')
     .option('-r, --repository [repository]', 'search by repository')
     .parse(process.argv)
 
+  if (!program.args.length) {
+    program.help()
+  }
+
   const token = process.env.GITHUB_TOKEN || program.token
   const keywords = program.args
   const qualifiers = program
