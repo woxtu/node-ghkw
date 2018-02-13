@@ -1,5 +1,7 @@
 # node-ghkw
 
+[![npm](https://img.shields.io/npm/v/node-ghkw.svg?style=flat-square)](https://www.npmjs.com/package/node-ghkw)
+
 Counting keyword frequencies in GitHub.
 
 ```console
@@ -51,6 +53,8 @@ $ ghkw -h
     -r, --repository [repository]  search by repository
     -h, --help                     output usage information
 ```
+
+For details: https://help.github.com/articles/searching-code/
 
 ## License
 
