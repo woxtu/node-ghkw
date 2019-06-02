@@ -50,6 +50,6 @@ require('../utils/object-extension')
       },
     }))
   } catch (e) {
-    console.error(e)
+    console.error(e.message || e)
   }
 })()
