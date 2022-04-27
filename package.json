@@ -1,5 +1,6 @@
 {
   "name": "node-ghkw",
+  "type": "module",
   "version": "1.0.1",
   "description": "Counting keyword frequencies in GitHub",
   "author": "woxtu <woxtup@gmail.com>",
