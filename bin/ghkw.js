@@ -4,7 +4,6 @@ import { createRequire } from "module";
 import { program } from "commander";
 import tablemark from "tablemark";
 import { run } from "../lib/index.js";
-import "../utils/object-extension.js";
 
 const require = createRequire(import.meta.url);
 
@@ -29,11 +28,10 @@ if (!program.args.length) {
 }
 
 const token = process.env.GITHUB_TOKEN || program.opts().token;
+delete program.opts().token;
+
 const keywords = program.args;
-const qualifiers = program
-  .opts()
-  .pick("in", "language", "fork", "size", "path", "filename", "extension", "user", "org", "repository")
-  .pickBy((_k, v) => v);
+const qualifiers = program.opts();
 
 try {
   let results = await run(token, keywords, qualifiers);
@@ -48,7 +46,7 @@ try {
         { name: "Count", align: "right" },
       ],
       stringify(value) {
-        return typeof value === "number" ? value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") : value;
+        return typeof value === "number" ? new Intl.NumberFormat().format(value) : value;
       },
     })
   );
