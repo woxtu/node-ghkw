@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { createRequire } from "module";
-import program from "commander";
+import { program } from "commander";
 import tablemark from "tablemark";
 import { run } from "../lib/index.js";
 import "../utils/object-extension.js";
@@ -28,9 +28,10 @@ if (!program.args.length) {
   program.help();
 }
 
-const token = process.env.GITHUB_TOKEN || program.token;
+const token = process.env.GITHUB_TOKEN || program.opts().token;
 const keywords = program.args;
 const qualifiers = program
+  .opts()
   .pick("in", "language", "fork", "size", "path", "filename", "extension", "user", "org", "repository")
   .pickBy((_k, v) => v);
 
@@ -39,7 +40,7 @@ try {
   results.sort((a, b) => a.total_count < b.total_count);
   results = results.map((item, n) => ({ rank: n + 1, ...item }));
 
-  console.log(
+  process.stdout.write(
     tablemark(results, {
       columns: [
         { name: "Rank", align: "right" },
